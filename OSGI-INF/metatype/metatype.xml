@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0">
+
+  <OCD description="" name="OSGi basic stderr logger" id="es.elv.osgi.log.stderr">
+
+	<AD name="min_level" id="min_level" required="true" type="String" default="WARNING">
+		<Option label="DEBUG" value="DEBUG" />
+		<Option label="INFO" value="INFO" />
+		<Option label="WARNING" value="WARNING" />
+		<Option label="ERROR" value="ERROR" />
+	</AD>
+	<AD name="bundle_min_levels" id="bundle_min_levels" required="false" type="String" default="bundle.symbolic.name=DEBUG,another.symbolic.name=INFO" />
+	<AD name="print_stack_traces" id="print_stack_traces" required="true" type="Boolean" default="true" />
+  </OCD>
+
+    <Designate pid="es.elv.osgi.log.stderr">
+        <Object ocdref="es.elv.osgi.log.stderr"/>
+    </Designate>
+
+</metatype:MetaData>

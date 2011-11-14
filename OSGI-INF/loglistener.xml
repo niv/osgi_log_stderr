@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" configuration-policy="require" immediate="true" name="es.elv.osgi.log.stderr">
+   <implementation class="es.elv.osgi.log.stderr.impl.LogListenerImpl"/>
+   <service>
+      <provide interface="org.osgi.service.cm.ManagedService"/>
+      <provide interface="org.osgi.service.log.LogListener"/>
+   </service>
+   <reference bind="addLRS" cardinality="0..n" interface="org.osgi.service.log.LogReaderService" name="LogReaderService" policy="dynamic" unbind="removeLRS"/>
+</scr:component>
